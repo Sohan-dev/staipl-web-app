@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Under Maintenance | Startrack Automation India Private Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --panel: #f5f7f9;
+    --line: #dde3e8;
+    --text: #0e1a24;
+    --muted: #54646f;
+    --accent: #e69500;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Barlow", Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  /* hazard stripe, like a factory floor marking */
+  .stripe {
+    height: 14px;
+    background: repeating-linear-gradient(-45deg, var(--accent) 0 18px, #1a1a1a 18px 36px);
+  }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+  .wrap { max-width: 720px; width: 100%; }
+  .brand {
+    font-family: "Barlow Condensed", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-family: "Barlow Condensed", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 11vw, 6.5rem);
+    line-height: .95;
+    margin-bottom: 28px;
+  }
+  .lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 52ch;
+    margin-bottom: 40px;
+  }
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 18px 20px;
+    margin-bottom: 40px;
+  }
+  /* the one animated element: a gear that turns slowly */
+  .gear { width: 36px; height: 36px; flex: none; color: var(--accent); animation: spin 8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .status strong { display: block; font-weight: 500; }
+  .status span { color: var(--muted); font-size: .95rem; }
+  .contact { color: var(--muted); }
+  .contact a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: 4px; }
+  .contact a:hover, .contact a:focus-visible { color: var(--accent); }
+  footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .85rem;
+    text-align: center;
+  }
+  @media (prefers-reduced-motion: reduce) { .gear { animation: none; } }
+</style>
+</head>
+<body>
+  <div class="stripe" aria-hidden="true"></div>
+  <main>
+    <div class="wrap">
+      <p class="brand">Startrack Automation India Private Limited</p>
+      <h1>We're upgrading our website.</h1>
+      <p class="lead">staipl.co.in is down for scheduled maintenance. We're working to bring it back soon, better than before.</p>
+
+      <div class="status" role="status">
+        <svg class="gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        <div>
+          <strong>Maintenance in progress</strong>
+          <span>Please check back shortly.</span>
+        </div>
+      </div>
+
+      <p class="contact">Need help right now? Email us at
+        <a href="mailto:info@staipl.co.in">info@staipl.co.in</a>
+      </p>
+    </div>
+  </main>
+  <footer>&copy; <span id="y">2026</span> Startrack Automation India Private Limited. All rights reserved.</footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
