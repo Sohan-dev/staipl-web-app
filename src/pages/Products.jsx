@@ -1,65 +1,59 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Cpu,
-  Radio,
-  Bot,
-  Wrench,
-  CheckCircle2,
-  ArrowUpRight,
-} from "lucide-react";
+import { CheckCircle2, ArrowUpRight, Wrench } from "lucide-react";
+import rockwellBadge from "../assets/rockwell-partner.png";
 
-const PRODUCTS = [
+const SOLUTIONS = [
   {
-    id: "edge-gw",
-    category: "Ready Modules",
-    title: "STAIPL-GW100 Industrial IoT Gateway",
-    badge: "Flagship Hardware",
-    desc: "DIN-rail mountable protocol converter bridging legacy RS485/Modbus PLCs directly to cloud MQTT/HTTPS brokers.",
+    id: "rockwell-si",
+    category: "PLC & SCADA Automation",
+    title: "Rockwell Automation System Integration",
+    badge: "Recognized System Integrator",
+    desc: "End-to-end turnkey process automation as a Recognized Rockwell Automation System Integrator—covering architecture design, panel engineering, programming, and commissioning[cite: 5].",
     specs: [
-      "2x Isolated RS485, 1x Ethernet, Wi-Fi/4G LTE",
-      "Wide 9V–36V DC Industrial Power Input",
-      "Onboard Flash Buffering (Up to 1M records)",
-      "DIN-Rail IP40 Rugged Enclosure",
+      "ControlLogix, CompactLogix & Micro800 PLC Programming",
+      "FactoryTalk View SE/ME HMI & Plant-Wide SCADA",
+      "PowerFlex VFD Drives & Servo Motion Integration",
+      "EtherNet/IP Industrial Network Architecture & Safety",
     ],
   },
   {
-    id: "daq-node",
-    category: "Ready Modules",
-    title: "Multi-Channel Analog & Digital DAQ Node",
-    badge: "Telemetry",
-    desc: "High-precision data acquisition module for retrofitting older machinery with real-time sensor monitoring.",
+    id: "multi-plc",
+    category: "PLC & SCADA Automation",
+    title: "Siemens & L&T PLC, HMI & SCADA Solutions",
+    badge: "Multi-Vendor Automation",
+    desc: "Complete process automation and legacy system upgrades across Siemens and L&T (Larsen & Toubro) automation platforms tailored for manufacturing and infrastructure.",
     specs: [
-      "8x Analog Inputs (4-20mA / 0-10V)",
-      "8x Opto-isolated Digital Inputs & 4x Relay Outputs",
-      "16-bit ADC Resolution at 1kHz Sampling",
-      "Zero-code Web Configuration UI",
+      "Siemens SIMATIC S7-1200 / S7-1500 & TIA Portal Engineering",
+      "L&T PLC & HMI Control Panel Design & Logic Development",
+      "Custom SCADA Visualization, Alarm Management & Reporting",
+      "Legacy Relay-to-PLC & Brownfield Plant Modernization",
     ],
   },
   {
-    id: "robo-ctrl",
-    category: "Robotics & Motion",
-    title: "Embedded Motion & Robotics Controller",
-    badge: "Robotics",
-    desc: "Deterministic multi-axis control board engineered for AGVs, robotic arms, and automated material handling.",
+    id: "instrumentation",
+    category: "Instrumentation",
+    title: "Industrial Field Instrumentation & Control",
+    badge: "Process Instrumentation",
+    desc: "Precision supply, calibration, loop checking, and integration of field instruments compatible with Rockwell, Siemens, and L&T control systems.",
     specs: [
-      "CANopen, EtherCAT & UART Interfaces",
-      "Closed-loop PID Encoder Feedback",
-      "Real-time Safety Interlock & E-Stop Circuitry",
-      "Custom Kinematics Firmware Support",
+      "Pressure, Temperature, Flow & Level Transmitters (4–20mA / HART)",
+      "Control Valves, Actuators & Analytical Process Sensors",
+      "Smart Energy Meters & Power Quality Analyzers",
+      "Hazardous Area & Industrial-Grade Panel Wiring",
     ],
   },
   {
-    id: "custom-oem",
-    category: "Custom Engineering",
-    title: "Bespoke PCB & Embedded Firmware Design",
-    badge: "Custom ODM",
-    desc: "Need a tailored controller built around your exact product? We take your concept from schematic to batch production.",
+    id: "iot-embedded",
+    category: "Embedded & IoT",
+    title: "Ready & Custom Embedded IoT & Robotics Modules",
+    badge: "IIoT & Embedded",
+    desc: "Stand-alone embedded controllers and industrial IoT gateways that connect your PLCs and field instruments to real-time dashboards and cloud analytics.",
     specs: [
-      "Custom Multi-layer PCB Design & EMI/EMC Testing",
-      "Bare-metal C/C++ & FreeRTOS Firmware",
-      "Custom Mobile/Web Dashboard Integration",
-      "Full IP Ownership & Production Support",
+      "Modbus RTU/TCP, RS485 & EtherNet/IP to MQTT/Cloud Gateways",
+      "Custom PCB Design, Firmware & Stand-Alone Embedded Systems",
+      "High-Frequency Data Logging with Local Buffer Storage",
+      "Robotics & Automated Material Handling Control Systems",
     ],
   },
 ];
@@ -68,31 +62,41 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const categories = [
     "All",
-    "Ready Modules",
-    "Robotics & Motion",
-    "Custom Engineering",
+    "PLC & SCADA Automation",
+    "Instrumentation",
+    "Embedded & IoT",
   ];
 
-  const filteredProducts =
+  const filteredSolutions =
     selectedCategory === "All"
-      ? PRODUCTS
-      : PRODUCTS.filter((item) => item.category === selectedCategory);
+      ? SOLUTIONS
+      : SOLUTIONS.filter((item) => item.category === selectedCategory);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-20">
-      {/* Header */}
-      <div className="max-w-3xl mb-12">
-        <span className="text-cyan-400 font-semibold text-xs uppercase tracking-widest">
-          Hardware &amp; Solutions
-        </span>
-        <h1 className="text-3xl md:text-5xl font-bold text-white mt-2 mb-4">
-          Ready Modules &amp; Custom Embedded Systems
-        </h1>
-        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-          Deploy our field-tested industrial IoT gateways immediately, or
-          partner with our engineering team to build custom stand-alone embedded
-          hardware tailored to your machinery.
-        </p>
+      {/* Header + Rockwell Partner Badge */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-12">
+        <div className="max-w-3xl">
+          <span className="text-blue-700 font-bold text-xs uppercase tracking-widest">
+            Industrial Automation &amp; Embedded Portfolio
+          </span>
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2 mb-4">
+            PLC, HMI, SCADA, Instrumentation &amp; Smart IoT
+          </h1>
+          <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+            From Recognized Rockwell Automation integration and Siemens/L&amp;T
+            PLC-SCADA projects to field instrumentation and custom embedded IoT
+            hardware, we deliver complete process automation[cite: 5].
+          </p>
+        </div>
+
+        <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs shrink-0 self-start">
+          <img
+            src={rockwellBadge}
+            alt="Recognized System Integrator - A Rockwell Automation Partner"
+            className="h-14 object-contain"
+          />
+        </div>
       </div>
 
       {/* Category Filter Tabs */}
@@ -103,8 +107,8 @@ export default function Products() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               selectedCategory === cat
-                ? "bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20"
-                : "bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700"
+                ? "bg-blue-700 text-white font-semibold shadow-sm"
+                : "bg-white text-slate-700 border border-slate-300 hover:border-blue-400"
             }`}
           >
             {cat}
@@ -112,40 +116,40 @@ export default function Products() {
         ))}
       </div>
 
-      {/* Product Cards Grid */}
+      {/* Solutions Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {filteredProducts.map((product) => (
+        {filteredSolutions.map((item) => (
           <div
-            key={product.id}
-            className="rounded-2xl bg-slate-900/50 border border-slate-800 p-8 flex flex-col justify-between hover:border-cyan-500/40 transition-all"
+            key={item.id}
+            className="rounded-2xl bg-white border border-slate-200 p-8 flex flex-col justify-between hover:border-blue-400 hover:shadow-md transition-all"
           >
             <div>
               <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold border border-cyan-500/20">
-                  {product.badge}
+                <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200">
+                  {item.badge}
                 </span>
                 <span className="text-xs text-slate-500 font-mono">
-                  {product.category}
+                  {item.category}
                 </span>
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-3">
-                {product.title}
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                {item.title}
               </h2>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                {product.desc}
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                {item.desc}
               </p>
 
-              <div className="space-y-2.5 border-t border-slate-800/80 pt-5 mb-8">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
-                  Key Specifications
+              <div className="space-y-2.5 border-t border-slate-100 pt-5 mb-8">
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+                  Capabilities &amp; Platforms
                 </p>
-                {product.specs.map((spec, idx) => (
+                {item.specs.map((spec, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-2.5 text-sm text-slate-300"
+                    className="flex items-start gap-2.5 text-sm text-slate-700"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
                     <span>{spec}</span>
                   </div>
                 ))}
@@ -154,33 +158,33 @@ export default function Products() {
 
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-white font-semibold text-sm transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-slate-900 hover:bg-blue-700 text-white font-semibold text-sm transition-colors"
             >
-              Request Datasheet &amp; Pricing{" "}
-              <ArrowUpRight className="w-4 h-4" />
+              Request Technical Proposal <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
         ))}
       </div>
 
       {/* Custom Engineering Banner */}
-      <div className="mt-16 rounded-2xl bg-gradient-to-r from-slate-900 via-cyan-950/30 to-slate-900 border border-cyan-500/30 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="mt-16 rounded-2xl bg-gradient-to-r from-blue-50 via-white to-slate-50 border border-blue-200 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
         <div className="space-y-2">
-          <div className="flex items-center gap-2 text-cyan-400 font-semibold text-sm">
-            <Wrench className="w-4 h-4" /> Custom Turnkey Development
+          <div className="flex items-center gap-2 text-blue-700 font-bold text-sm">
+            <Wrench className="w-4 h-4" /> Turnkey Process Automation &amp;
+            Custom Hardware
           </div>
-          <h3 className="text-2xl font-bold text-white">
-            Have a unique machine or legacy protocol?
+          <h3 className="text-2xl font-bold text-slate-900">
+            Planning a new PLC/SCADA line or IoT retrofit?
           </h3>
-          <p className="text-slate-400 text-sm max-w-xl">
-            We design custom stand-alone embedded controllers and interfaces
-            from scratch to integrate seamlessly with your existing industrial
-            setup.
+          <p className="text-slate-600 text-sm max-w-xl">
+            Whether you need Rockwell, Siemens, or L&amp;T automation
+            integration or a custom embedded controller built from scratch, our
+            engineers handle design through commissioning.
           </p>
         </div>
         <Link
           to="/contact"
-          className="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shrink-0 transition-colors"
+          className="px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm shrink-0 transition-colors shadow-sm"
         >
           Discuss Your Requirement
         </Link>

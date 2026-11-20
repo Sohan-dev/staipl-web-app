@@ -3,8 +3,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #020617; /* slate-950 */
-    color: #f1f5f9; /* slate-100 */
+    background-color: #f8fafc; /* slate-50 */
+    color: #0f172a; /* slate-900 */
   }
 
   body {

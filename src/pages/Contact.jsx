@@ -7,13 +7,12 @@ export default function Contact() {
     name: "",
     company: "",
     email: "",
-    projectType: "Industrial IoT & Data Logging",
+    projectType: "Rockwell / Siemens / L&T PLC & SCADA",
     message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Note: Connect to Formspree, EmailJS, or your Hostinger PHP backend later
     setSubmitted(true);
   };
 
@@ -23,63 +22,68 @@ export default function Contact() {
         {/* Left Column: Info */}
         <div className="space-y-8">
           <div>
-            <span className="text-cyan-400 font-semibold text-xs uppercase tracking-widest">
+            <span className="text-blue-700 font-bold text-xs uppercase tracking-widest">
               Get In Touch
             </span>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mt-2 mb-4">
-              Let&apos;s Engineer Your Next Smart System
+            <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2 mb-4">
+              Let&apos;s Engineer Your Next Automation &amp; IoT System
             </h1>
-            <p className="text-slate-400 leading-relaxed">
-              Looking to retrofit existing machines with IoT monitoring, source
-              ready embedded modules, or build a custom controller from scratch?
-              Reach out to our engineering team.
+            <p className="text-slate-600 leading-relaxed">
+              Looking for a Rockwell System Integrator, Siemens/L&amp;T
+              PLC-SCADA programming, field instrumentation, or custom embedded
+              IoT hardware? Reach out to our engineering team[cite: 5].
             </p>
           </div>
 
           <div className="space-y-6 pt-4">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+              <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-700">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-white font-semibold">Email Us</h3>
-                <p className="text-slate-400 text-sm">info@staipl.co.in</p>
+                <h3 className="text-slate-900 font-semibold">Email Us</h3>
+                <p className="text-slate-600 text-sm">info@staipl.co.in</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+              <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-700">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-white font-semibold">Call Engineering</h3>
-                <p className="text-slate-400 text-sm">+91 (000) 000-0000</p>
+                <h3 className="text-slate-900 font-semibold">
+                  Call Engineering
+                </h3>
+                <p className="text-slate-600 text-sm">+91 91477 16445</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+              <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-700">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-white font-semibold">Location</h3>
-                <p className="text-slate-400 text-sm">India</p>
+                <h3 className="text-slate-900 font-semibold">Location</h3>
+                <p className="text-slate-600 text-sm">
+                  RAGHABPUR, BISHNUPUR, NEPALGUNJ, Raghabpur, South Twenty Four
+                  Parganas, West Bengal, 700103
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Column: Form */}
-        <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 md:p-10">
+        <div className="rounded-2xl bg-white border border-slate-200 p-8 md:p-10 shadow-sm">
           {submitted ? (
             <div className="py-16 text-center space-y-4">
-              <CheckCircle className="w-14 h-14 text-emerald-400 mx-auto" />
-              <h3 className="text-2xl font-bold text-white">
+              <CheckCircle className="w-14 h-14 text-emerald-600 mx-auto" />
+              <h3 className="text-2xl font-bold text-slate-900">
                 Inquiry Received
               </h3>
-              <p className="text-slate-400 text-sm max-w-md mx-auto">
+              <p className="text-slate-600 text-sm max-w-md mx-auto">
                 Thank you,{" "}
-                <span className="text-white font-semibold">
+                <span className="text-slate-900 font-semibold">
                   {formData.name}
                 </span>
                 . One of our automation &amp; embedded engineers will review
@@ -87,7 +91,7 @@ export default function Contact() {
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="mt-4 px-5 py-2 rounded-lg bg-slate-800 text-cyan-400 text-sm font-medium hover:bg-slate-700"
+                className="mt-4 px-5 py-2 rounded-lg bg-slate-100 text-blue-700 text-sm font-semibold hover:bg-slate-200"
               >
                 Send Another Inquiry
               </button>
@@ -96,7 +100,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                     Your Name *
                   </label>
                   <input
@@ -107,11 +111,11 @@ export default function Contact() {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="Rajesh Kumar"
-                    className="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-500"
+                    className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                     Company / Industry
                   </label>
                   <input
@@ -121,13 +125,13 @@ export default function Contact() {
                       setFormData({ ...formData, company: e.target.value })
                     }
                     placeholder="Precision Mfg Pvt Ltd"
-                    className="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-500"
+                    className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                   Work Email *
                 </label>
                 <input
@@ -138,12 +142,12 @@ export default function Contact() {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   placeholder="rajesh@company.com"
-                  className="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-500"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                   Area of Interest
                 </label>
                 <select
@@ -151,18 +155,18 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, projectType: e.target.value })
                   }
-                  className="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-500"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white"
                 >
+                  <option>Rockwell / Siemens / L&amp;T PLC &amp; SCADA</option>
+                  <option>Industrial Field Instrumentation</option>
                   <option>Industrial IoT &amp; Data Logging</option>
-                  <option>Ready Embedded Modules / Gateways</option>
-                  <option>Custom PCB &amp; Firmware Development</option>
-                  <option>Robotics &amp; Motion Control</option>
-                  <option>PLC / Legacy Machine Retrofitting</option>
+                  <option>Ready &amp; Custom Embedded Modules</option>
+                  <option>Robotics &amp; Process Automation</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                   Project Details / Technical Specs *
                 </label>
                 <textarea
@@ -172,14 +176,14 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  placeholder="Tell us about the machines, protocols (Modbus, CAN, etc.), or custom module requirements..."
-                  className="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-cyan-500"
+                  placeholder="Tell us about your PLC/SCADA platform, field instruments, or IoT monitoring requirements..."
+                  className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-lg shadow-cyan-500/20"
+                className="w-full py-3.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
                 Send Technical Inquiry <Send className="w-4 h-4" />
               </button>
