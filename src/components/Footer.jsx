@@ -95,8 +95,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-200 bg-slate-50 py-6 px-6 text-center text-xs text-slate-500">
-        &copy; {new Date().getFullYear()} STAIPL. All rights reserved.
-        Industrial Automation, PLC/SCADA &amp; Embedded IoT.
+        &copy; {new Date().getFullYear()} Startrack Automation India Private
+        Limited. All rights reserved.
       </div>
     </footer>
   );
